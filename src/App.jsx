@@ -1,12 +1,30 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@components';
-
+import { LeftSidebar } from '@pages';
 function App() {
-  const [count, setCount] = useState(0);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
 
   return (
     <>
-      <p className='bg-red-600'>hello</p>
+      {/* <div>
+        <button onClick={() => setIsDarkMode(!isDarkMode)}>
+          Toggle {isDarkMode ? 'Light' : 'Dark'} Mode
+        </button>
+        <div className='bg-base text-text_primary dark:bg-black dark:text-text_primary_dark'>
+          Your content here
+        </div>
+        SDFSDD
+      </div> */}
+      {/* <LeftSidebar /> */}
+      SDFSDF
     </>
   );
 }
