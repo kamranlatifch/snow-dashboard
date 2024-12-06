@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@components';
-import { LeftSidebar } from '@pages';
+import { LeftSidebar, RightSidebar, MainContent } from '@pages';
+import { SidebarProvider, SidebarInset, SidebarTrigger } from '@components';
+import Layout from './Layout';
+
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -13,19 +16,17 @@ function App() {
   }, [isDarkMode]);
 
   return (
-    <>
-      {/* <div>
-        <button onClick={() => setIsDarkMode(!isDarkMode)}>
-          Toggle {isDarkMode ? 'Light' : 'Dark'} Mode
-        </button>
-        <div className='bg-base text-text_primary dark:bg-black dark:text-text_primary_dark'>
-          Your content here
-        </div>
-        SDFSDD
-      </div> */}
-      {/* <LeftSidebar /> */}
-      SDFSDF
-    </>
+    <SidebarProvider>
+      <LeftSidebar />
+
+      <MainContent />
+      <RightSidebar />
+    </SidebarProvider>
+    // <>
+    // <Layout>
+    //   <MainContent />
+    // </Layout>
+    // </>
   );
 }
 
