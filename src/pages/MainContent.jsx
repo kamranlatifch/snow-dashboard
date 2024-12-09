@@ -19,7 +19,12 @@ import {
   Search,
   Star,
 } from '@assets/svgs';
-const MainContent = ({ setSideBar, setRightSidebarOpen, rightSidebarOpen }) => {
+const MainContent = ({
+  setSideBar,
+  setRightSidebarOpen,
+  rightSidebarOpen,
+  breadcrumbData,
+}) => {
   return (
     <main className='flex-1 overflow-auto bg-background'>
       <header className='flex h-16 items-center border-b px-7 py-6 justify-between'>
@@ -38,13 +43,13 @@ const MainContent = ({ setSideBar, setRightSidebarOpen, rightSidebarOpen }) => {
                   className='font-inter text-text_secondary'
                   href='/'
                 >
-                  Dashboard
+                  {breadcrumbData?.[0]?.label}
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbPage className='font-inter text-text_primary'>
-                  Default
+                  {breadcrumbData?.[1]?.label}
                 </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>

@@ -49,7 +49,7 @@ import {
   SnowIcon,
 } from '@assets/svgs';
 
-const LeftSidebar = () => {
+const LeftSidebar = ({ setBreadcrumbData }) => {
   const menuItems = [
     {
       groupLabel: 'Dashboard',
@@ -252,18 +252,25 @@ const LeftSidebar = () => {
                     asChild
                     className='group/collapsible'
                   >
-                    <SidebarMenuItem className='p-0'>
+                    <SidebarMenuItem
+                      onClick={() => {
+                        setBreadcrumbData([
+                          { label: data?.groupLabel, href: '/' },
+                          { label: item?.title, href: '/profile' },
+                        ]);
+                      }}
+                      className='p-0'
+                    >
                       <CollapsibleTrigger asChild className='p-0 mt-1'>
                         <SidebarMenuButton
                           variant='default'
                           tooltip={item.title}
-                          className='relative'
-                          // className='w-full'
+                          className='w-full relative px-4'
                         >
-                          {/* <div className='absolute hidden w-1 h-4 bg-black group-data-[state=open]/collapsible:flex rounded'></div> */}
+                          <div className='absolute left-0 hidden w-1 h-4 bg-black group-data-[state=open]/collapsible:flex rounded'></div>
                           {state === 'expanded' && (
                             <ChevronRight
-                              className={`ml-auto ${
+                              className={`${
                                 state === 'collapsed' ? 'hidden' : ''
                               }size-4 text-text_secondary_light transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90`}
                             />
