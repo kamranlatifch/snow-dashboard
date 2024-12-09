@@ -36,7 +36,7 @@ function App() {
       {/* Right Sidebar */}
       <div
         className={`transition-width duration-300 ${
-          rightSidebarOpen ? 'w-[280px]' : 'w-12'
+          rightSidebarOpen ? 'w-[280px]' : 'w-[68px]'
         }`}
       >
         <RightSidebar rightSidebarOpen={rightSidebarOpen} />

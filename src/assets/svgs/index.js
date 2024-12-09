@@ -20,3 +20,6 @@ export { Socials } from './Socials';
 export { Snow } from './Snow';
 export { SnowIcon } from './SnowIcon';
 export { Bug } from './Bug';
+export { NotPerson } from './NotPerson';
+export { NotWifi } from './NotWifi';
+export { ActivitiesBr } from './ActivitiesBr';
