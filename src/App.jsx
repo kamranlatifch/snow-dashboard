@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@components';
-import { LeftSidebar } from '@pages';
+import { LeftSidebar, RightSidebar, MainContent } from '@pages';
+import { SidebarProvider, SidebarInset, SidebarTrigger } from '@components';
+import Layout from './Layout';
+
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [rightSidebarOpen, setRightSidebarOpen] = useState(true);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -11,21 +15,33 @@ function App() {
       document.documentElement.classList.remove('dark');
     }
   }, [isDarkMode]);
+  const [sideBar, setSideBar] = useState('');
 
   return (
-    <>
-      {/* <div>
-        <button onClick={() => setIsDarkMode(!isDarkMode)}>
-          Toggle {isDarkMode ? 'Light' : 'Dark'} Mode
-        </button>
-        <div className='bg-base text-text_primary dark:bg-black dark:text-text_primary_dark'>
-          Your content here
-        </div>
-        SDFSDD
-      </div> */}
-      {/* <LeftSidebar /> */}
-      SDFSDF
-    </>
+    <SidebarProvider name={sideBar}>
+      <LeftSidebar />
+
+      <div
+        className={`flex-1 transition-margin duration-300  ${
+          rightSidebarOpen ? '' : ''
+        }`}
+      >
+        <MainContent
+          setSideBar={setSideBar}
+          setRightSidebarOpen={setRightSidebarOpen}
+          rightSidebarOpen={rightSidebarOpen}
+        />
+      </div>
+
+      {/* Right Sidebar */}
+      <div
+        className={`transition-width duration-300 ${
+          rightSidebarOpen ? 'w-[212px]' : 'w-12'
+        }`}
+      >
+        <RightSidebar rightSidebarOpen={rightSidebarOpen} />
+      </div>
+    </SidebarProvider>
   );
 }
 
