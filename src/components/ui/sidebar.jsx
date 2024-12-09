@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva } from 'class-variance-authority';
-import { PanelLeft } from 'lucide-react';
+import { PanelLeft } from '@assets/svgs';
 
 import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
@@ -22,7 +22,7 @@ const SIDEBAR_COOKIE_NAME = 'sidebar:state';
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
 const SIDEBAR_WIDTH = '212px';
 const SIDEBAR_WIDTH_MOBILE = '212px';
-const SIDEBAR_WIDTH_ICON = '3rem';
+const SIDEBAR_WIDTH_ICON = '48px';
 const SIDEBAR_KEYBOARD_SHORTCUT = 'b';
 
 const SidebarContext = React.createContext(null);
@@ -45,13 +45,13 @@ const SidebarProvider = React.forwardRef(
       className,
       style,
       children,
+      name,
       ...props
     },
     ref
   ) => {
     const isMobile = useIsMobile();
     const [openMobile, setOpenMobile] = React.useState(false);
-
     // This is the internal state of the sidebar.
     // We use openProp and setOpenProp for control from outside the component.
     const [_open, _setOpen] = React.useState(defaultOpen);
@@ -106,9 +106,19 @@ const SidebarProvider = React.forwardRef(
         isMobile,
         openMobile,
         setOpenMobile,
+        name,
         toggleSidebar,
       }),
-      [state, open, setOpen, isMobile, openMobile, setOpenMobile, toggleSidebar]
+      [
+        state,
+        open,
+        setOpen,
+        isMobile,
+        openMobile,
+        setOpenMobile,
+        name,
+        toggleSidebar,
+      ]
     );
 
     return (
@@ -148,8 +158,7 @@ const Sidebar = React.forwardRef(
     },
     ref
   ) => {
-    const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
-
+    const { isMobile, state, openMobile, setOpenMobile, name } = useSidebar();
     if (collapsible === 'none') {
       return (
         <div
@@ -233,23 +242,23 @@ Sidebar.displayName = 'Sidebar';
 const SidebarTrigger = React.forwardRef(
   ({ className, onClick, ...props }, ref) => {
     const { toggleSidebar } = useSidebar();
-    console.log('Props are ', props);
+
     return (
-      <Button
+      <div
         ref={ref}
         data-sidebar='trigger'
         variant='ghost'
         size='icon'
-        className={cn('h-7 w-7', className)}
+        className={cn('h-7 w-7')}
         onClick={(event) => {
           onClick?.(event);
           toggleSidebar();
         }}
         {...props}
       >
-        <PanelLeft />
+        <PanelLeft className='w-full' />
         <span className='sr-only'>Toggle Sidebar</span>
-      </Button>
+      </div>
     );
   }
 );

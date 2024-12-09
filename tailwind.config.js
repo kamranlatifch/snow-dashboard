@@ -24,6 +24,7 @@ module.exports = {
         text_primary: '#1C1C1C',
         text_secondary: '#00000066',
         text_secondary_light: '#00000033',
+
         text_light: '#FFFFFF',
         text_blue: '#8A8CD9',
         text_gray: '#00000066',

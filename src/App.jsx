@@ -6,6 +6,7 @@ import Layout from './Layout';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [rightSidebarOpen, setRightSidebarOpen] = useState(true);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -14,19 +15,33 @@ function App() {
       document.documentElement.classList.remove('dark');
     }
   }, [isDarkMode]);
+  const [sideBar, setSideBar] = useState('');
 
   return (
-    <SidebarProvider>
+    <SidebarProvider name={sideBar}>
       <LeftSidebar />
 
-      <MainContent />
-      <RightSidebar />
+      <div
+        className={`flex-1 transition-margin duration-300  ${
+          rightSidebarOpen ? '' : ''
+        }`}
+      >
+        <MainContent
+          setSideBar={setSideBar}
+          setRightSidebarOpen={setRightSidebarOpen}
+          rightSidebarOpen={rightSidebarOpen}
+        />
+      </div>
+
+      {/* Right Sidebar */}
+      <div
+        className={`transition-width duration-300 ${
+          rightSidebarOpen ? 'w-[212px]' : 'w-12'
+        }`}
+      >
+        <RightSidebar rightSidebarOpen={rightSidebarOpen} />
+      </div>
     </SidebarProvider>
-    // <>
-    // <Layout>
-    //   <MainContent />
-    // </Layout>
-    // </>
   );
 }
 
