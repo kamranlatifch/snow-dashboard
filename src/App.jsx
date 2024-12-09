@@ -16,10 +16,14 @@ function App() {
     }
   }, [isDarkMode]);
   const [sideBar, setSideBar] = useState('');
+  const [breadcrumbData, setBreadcrumbData] = useState([
+    { label: 'Dashboard', href: '/' },
+    { label: 'Default', href: '/' },
+  ]);
 
   return (
     <SidebarProvider name={sideBar}>
-      <LeftSidebar />
+      <LeftSidebar setBreadcrumbData={setBreadcrumbData} />
 
       <div
         className={`flex-1 transition-margin duration-300  ${
@@ -30,13 +34,14 @@ function App() {
           setSideBar={setSideBar}
           setRightSidebarOpen={setRightSidebarOpen}
           rightSidebarOpen={rightSidebarOpen}
+          breadcrumbData={breadcrumbData}
         />
       </div>
 
       {/* Right Sidebar */}
       <div
         className={`transition-width duration-300 ${
-          rightSidebarOpen ? 'w-[280px]' : 'w-12'
+          rightSidebarOpen ? 'w-[280px]' : 'w-[68px]'
         }`}
       >
         <RightSidebar rightSidebarOpen={rightSidebarOpen} />
