@@ -19,6 +19,7 @@ import {
   Search,
   Star,
 } from '@assets/svgs';
+import { AddUser } from './AddUser';
 const MainContent = ({
   setSideBar,
   setRightSidebarOpen,
@@ -80,13 +81,8 @@ const MainContent = ({
           </div>
         </div>
       </header>
-      <div className='p-4'>
-        <p>
-          This is the main content area. You can add your page content here. sf
-          s sdf ds fds fds f sdf sd fds f sdf sd f df sd fd fd f dsf ds f sdf ds
-          fds f fds f sdf d fds fsd f sdf sd f sdf d fds f df ds fds f sd fd f
-          sdf ds fds f dsf ds fd
-        </p>
+      <div className='flex flex-col gap-7 p-7'>
+        <AddUser />
       </div>
     </main>
   );
