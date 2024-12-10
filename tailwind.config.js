@@ -8,6 +8,8 @@ module.exports = {
       padding: '4.375rem',
     },
     screens: {
+      md: '1024',
+      lg: '1130px',
       xl: '1440px',
     },
     fontFamily: {

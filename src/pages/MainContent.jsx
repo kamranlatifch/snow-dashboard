@@ -27,7 +27,7 @@ const MainContent = ({
   breadcrumbData,
 }) => {
   return (
-    <main className='flex-1 overflow-auto bg-background'>
+    <main className='flex-1 bg-background overflow-auto'>
       <header className='flex h-16 items-center border-b px-7 py-6 justify-between'>
         <div className='flex gap-2 justify-center items-center'>
           <SidebarTrigger
