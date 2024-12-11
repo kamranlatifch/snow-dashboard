@@ -9,7 +9,7 @@ const ActivitiesCard = ({ image, title, time }) => {
       </Avatar>
       <div className='flex flex-col'>
         <p className='font-inter text-sm font-normal leading-[20px]'>{title}</p>
-        <span className='font-inter text-xs text-text_secondary leading-[18px]'>
+        <span className='font-inter text-xs text-text_secondary leading-[18px] dark:text-gray-400'>
           {time}
         </span>
       </div>

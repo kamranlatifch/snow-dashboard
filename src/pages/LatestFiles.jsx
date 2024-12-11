@@ -45,18 +45,19 @@ const LatestFiles = () => {
     },
   ];
   return (
-    <div className='flex flex-col bg-lightMist p-6 rounded-[16px] gap-4 w-[432px]'>
+    <div className='flex flex-col bg-lightMist dark:bg-gray-700 p-6 rounded-[16px] gap-4 min-w-[432px] flex-grow'>
       <h3 className='font-inter font-semibold text-sm'>Latest Files</h3>
 
       <div className={`flex flex-col gap-2 relative`}>
         {NotificationData?.map((item, index) => (
           <NotificationCard
+            key={index}
             Svg={item.Svg}
             title={item.title}
             time={item.time}
           />
         ))}
-        <Download className='absolute right-0' />
+        <Download className='absolute right-0 dark:text-text_light' />
       </div>
       <div className='flex flex-row justify-center items-center gap-4 py-[10px] bg-frostedMist rounded-[8px]'>
         <p className='font-inter font-normal font-xs text-text_secondary'>

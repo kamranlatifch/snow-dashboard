@@ -256,7 +256,7 @@ const SidebarTrigger = React.forwardRef(
         }}
         {...props}
       >
-        <PanelLeft className='w-full' />
+        <PanelLeft className='w-full cursor-pointer' />
         <span className='sr-only'>Toggle Sidebar</span>
       </div>
     );

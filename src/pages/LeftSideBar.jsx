@@ -173,12 +173,12 @@ const LeftSidebar = ({ setBreadcrumbData }) => {
   } = useSidebar();
   return (
     <Sidebar
-      className=' bg-base'
-      defaultOpen={true}
+      className=' bg-base dark:bg-black'
+      defaultopen='true'
       variant='sidebar'
       collapsible='icon'
     >
-      <SidebarHeader className='bg-base p-0'>
+      <SidebarHeader className='bg-base p-0 dark:bg-black'>
         <SidebarMenu>
           <SidebarMenuItem className=''>
             <SidebarMenuButton asChild>
@@ -194,7 +194,7 @@ const LeftSidebar = ({ setBreadcrumbData }) => {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarContent className='bg-base mt-4'>
+      <SidebarContent className='bg-base dark:bg-black  pt-4'>
         <SidebarMenu>
           <SidebarMenuItem>
             {state === 'expanded' && (
@@ -214,24 +214,24 @@ const LeftSidebar = ({ setBreadcrumbData }) => {
                   </TabsTrigger>
                 </TabsList>
                 <TabsContent value='account' className='mt-1'>
-                  <li className='flex items-center py-1 gap-2 font-inter text-sm font-normal text-text_primary'>
-                    <Dot />
+                  <span className='flex items-center py-1 gap-2 font-inter text-sm font-normal text-text_primary dark:text-text_light'>
+                    <Dot className='dark:text-text_light' />
                     OverView
-                  </li>
-                  <li className='flex items-center py-1 gap-2 mt-1 font-inter text-sm font-normal text-text_primary'>
-                    <Dot />
+                  </span>
+                  <span className='flex items-center py-1 gap-2 mt-1 font-inter text-sm font-normal text-text_primary dark:text-text_light'>
+                    <Dot className='dark:text-text_light' />
                     Projects
-                  </li>
+                  </span>
                 </TabsContent>
                 <TabsContent value='password' className='mt-1'>
-                  <li className='flex items-center  py-1 gap-2 font-inter text-sm font-normal text-text_primary'>
-                    <Dot />
+                  <span className='flex items-center  py-1 gap-2 font-inter text-sm font-normal text-text_primary dark:text-text_light'>
+                    <Dot className='dark:text-text_light' />
                     Count
-                  </li>
-                  <li className='flex items-center gap-2  py-1 mt-1 font-inter text-sm font-normal text-text_primary'>
-                    <Dot />
+                  </span>
+                  <span className='flex items-center gap-2  py-1 mt-1 font-inter text-sm font-normal text-text_primary dark:text-text_light'>
+                    <Dot className='dark:text-text_light' />
                     Pages
-                  </li>
+                  </span>
                 </TabsContent>
               </Tabs>
             )}
@@ -241,7 +241,7 @@ const LeftSidebar = ({ setBreadcrumbData }) => {
         <SidebarGroup>
           {menuItems.map((data, index) => (
             <div key={index}>
-              <SidebarGroupLabel className='font-inter px-4 font-normal text-sm text-text_secondary'>
+              <SidebarGroupLabel className='font-inter px-4 font-normal text-sm text-text_secondary dark:text-gray-300'>
                 {data.groupLabel}
               </SidebarGroupLabel>
               <SidebarMenu>
@@ -271,11 +271,11 @@ const LeftSidebar = ({ setBreadcrumbData }) => {
                             <ChevronRight
                               className={`${
                                 state === 'collapsed' ? 'hidden' : ''
-                              }size-4 text-text_secondary_light transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90`}
+                              }size-4 dark:text-white text-text_secondary_light  transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90`}
                             />
                           )}{' '}
-                          <item.icon className='size-4' />
-                          <span className='font-inter  text-sm text-text_primary'>
+                          <item.icon className='size-4 dark:text-text_light' />
+                          <span className='font-inter  text-sm text-text_primary dark:text-text_light'>
                             {item.title}
                           </span>
                         </SidebarMenuButton>
@@ -299,8 +299,12 @@ const LeftSidebar = ({ setBreadcrumbData }) => {
           ))}
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter className='bg-base items-center'>
-        {state === 'collapsed' ? <SnowIcon className='w-5 h-5' /> : <Snow />}
+      <SidebarFooter className='bg-base items-center dark:bg-black'>
+        {state === 'collapsed' ? (
+          <SnowIcon className='w-5 h-5' />
+        ) : (
+          <Snow className='dark:text-text_light' />
+        )}
       </SidebarFooter>
     </Sidebar>
   );

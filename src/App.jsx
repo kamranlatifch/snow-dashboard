@@ -5,16 +5,8 @@ import { SidebarProvider, SidebarInset, SidebarTrigger } from '@components';
 import Layout from './Layout';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [rightSidebarOpen, setRightSidebarOpen] = useState(true);
 
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDarkMode]);
   const [sideBar, setSideBar] = useState('');
   const [breadcrumbData, setBreadcrumbData] = useState([
     { label: 'Dashboard', href: '/' },
