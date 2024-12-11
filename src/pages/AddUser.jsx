@@ -32,7 +32,7 @@ import Image2 from '../assets/images/Activities2.png';
 import { Ellipsis } from 'lucide-react';
 
 const Overview = () => (
-  <div className='bg-lightMist mt-5 p-6 rounded-[16px] gap-4'>
+  <div className='bg-lightMist dark:bg-gray-700 mt-5 p-6 rounded-[16px] gap-4'>
     <div className='flex flex-row justify-between'>
       <h1 className='font-inter font-semibold text-[18px] '>
         Coffee detail page
@@ -57,21 +57,21 @@ const Overview = () => (
         <Separator orientation='vertical' className='h-[52px] w-[4px]' />
         <div className='flex flex-col gap-1 '>
           <span className='font-inter text-sm font-normal'>Total Tasks</span>
-          <h3 className='font-inter font-semibold text-[18px] text-text_primary'>
+          <h3 className='font-inter font-semibold text-[18px] text-text_primary dark:text-text_light'>
             15 / 48
           </h3>
         </div>
         <Separator orientation='vertical' className='h-[52px] w-[4px]' />
         <div className='flex flex-col gap-1 '>
           <span className='font-inter text-sm font-normal'>Due Date</span>
-          <h3 className='font-inter font-semibold text-[18px] text-text_primary'>
+          <h3 className='font-inter font-semibold text-[18px] text-text_primary dark:text-text_light'>
             29 Jan, 2022
           </h3>
         </div>
         <Separator orientation='vertical' className='h-[52px] w-[4px]' />
         <div className='flex flex-col gap-1 '>
           <span className='font-inter text-sm font-normal'>Budget Spent</span>
-          <h3 className='font-inter font-semibold text-[18px] text-text_primary'>
+          <h3 className='font-inter font-semibold text-[18px] text-text_primary dark:text-text_light'>
             $15,000
           </h3>
         </div>
@@ -96,7 +96,7 @@ const Overview = () => (
   </div>
 );
 const Targets = () => (
-  <div className='bg-lightMist mt-5 p-6 rounded-[16px] gap-4'>
+  <div className='bg-lightMist dark:bg-gray-700 mt-5 p-6 rounded-[16px] gap-4'>
     <div className='flex flex-row justify-between'>
       <h1 className='font-inter font-semibold text-[18px] '>
         Target Detail Page
@@ -121,21 +121,21 @@ const Targets = () => (
         <Separator orientation='vertical' className='h-[52px] w-[4px]' />
         <div className='flex flex-col gap-1 '>
           <span className='font-inter text-sm font-normal'>Total Tasks</span>
-          <h3 className='font-inter font-semibold text-[18px] text-text_primary'>
+          <h3 className='font-inter font-semibold text-[18px] text-text_primary dark:text-text_light'>
             15 / 48
           </h3>
         </div>
         <Separator orientation='vertical' className='h-[52px] w-[4px]' />
         <div className='flex flex-col gap-1 '>
           <span className='font-inter text-sm font-normal'>Due Date</span>
-          <h3 className='font-inter font-semibold text-[18px] text-text_primary'>
+          <h3 className='font-inter font-semibold text-[18px] text-text_primary dark:text-text_light'>
             29 Jan, 2022
           </h3>
         </div>
         <Separator orientation='vertical' className='h-[52px] w-[4px]' />
         <div className='flex flex-col gap-1 '>
           <span className='font-inter text-sm font-normal'>Budget Spent</span>
-          <h3 className='font-inter font-semibold text-[18px] text-text_primary'>
+          <h3 className='font-inter font-semibold text-[18px] text-text_primary dark:text-text_light'>
             $15,000
           </h3>
         </div>
@@ -204,7 +204,7 @@ const AddUser = () => {
           </TabsList>
           <div className='flex flex-row gap-3'>
             <Dialog>
-              <DialogTrigger className='font-inter text-sm text-text_secondary'>
+              <DialogTrigger className='font-inter text-sm text-text_secondary dark:text-text_light'>
                 + Add User
               </DialogTrigger>
               <DialogContent className='sm:max-w-[425px]'>
@@ -243,7 +243,7 @@ const AddUser = () => {
             </Dialog>
 
             <Dialog>
-              <DialogTrigger className='font-inter text-sm text-text_secondary'>
+              <DialogTrigger className='font-inter text-sm text-text_secondary dark:text-text_light'>
                 Add Target
               </DialogTrigger>
               <DialogContent className='sm:max-w-[425px]'>
@@ -283,7 +283,7 @@ const AddUser = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger>
-                <Ellipsis className='text-text_secondary' />
+                <Ellipsis className='text-text_secondary dark:text-text_light' />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>

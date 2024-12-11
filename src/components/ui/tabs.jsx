@@ -9,7 +9,7 @@ const TabsList = React.forwardRef(({ className, ...props }, ref) => (
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      'inline-flex items-center justify-center rounded-md bg-neutral-100  text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400',
+      'inline-flex items-center justify-center rounded-md bg-neutral-100  text-neutral-500 dark:bg-[#1a1a1a] dark:text-neutral-400',
       className
     )}
     {...props}
@@ -21,7 +21,7 @@ const TabsTrigger = React.forwardRef(({ className, ...props }, ref) => (
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      'inline-flex items-center justify-center whitespace-nowrap font-inter text-[20px] text-text_secondary_light rounded-sm  text-sm font-medium ring-offset-white transition-all focus-visible:outline-none focus-visible:ring-2  focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-white data-[state=active]:text-text_secondary  dark:ring-offset-neutral-950 dark:focus-visible:ring-neutral-300 dark:data-[state=active]:bg-neutral-950 dark:data-[state=active]:text-neutral-50',
+      'inline-flex items-center justify-center whitespace-nowrap font-inter text-[20px] text-text_secondary_light rounded-sm  text-sm font-medium ring-offset-white transition-all focus-visible:outline-none focus-visible:ring-2  focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:text-gray-400 data-[state=active]:bg-white data-[state=active]:text-text_secondary  dark:ring-offset-neutral-950 dark:focus-visible:ring-neutral-300 dark:data-[state=active]:bg-[#1a1a1a] dark:data-[state=active]:text-neutral-50',
       className
     )}
     {...props}

@@ -67,7 +67,7 @@ const ProjectSpendings = () => {
       case 'Approved':
         return 'bg-[#FFC555]';
       default:
-        return 'bg-[#00000066]';
+        return 'bg-[#00000066] dark:bg-gray-400';
     }
   }
   function getTextColor(text) {
@@ -79,11 +79,11 @@ const ProjectSpendings = () => {
       case 'Approved':
         return 'text-[#FFC555]';
       default:
-        return 'text-[#00000066]';
+        return 'text-[#00000066] dark:text-gray-400';
     }
   }
   return (
-    <div className='flex flex-col p-6 bg-lightMist rounded-[16px] gap-2'>
+    <div className='flex flex-col p-6 bg-lightMist dark:bg-gray-700 rounded-[16px] gap-2'>
       <h4 className='font-inter font-normal text-sm'>Project Spendings</h4>
 
       <Table className='border-collapse'>
@@ -121,13 +121,13 @@ const ProjectSpendings = () => {
               <TableCell>{transaction.date}</TableCell>
               <TableCell>{transaction.amount}</TableCell>
               <TableCell
-                className={`font-inter text-xs font-normal ${getTextColor(
+                className={`font-inter text-xs font-normal  ${getTextColor(
                   transaction.status
                 )}`}
               >
                 <div className='flex items-center'>
                   <div
-                    className={`h-2.5 w-2.5 rounded-full mr-2 ${getStatusColor(
+                    className={`h-2.5 w-2.5 rounded-full mr-2  ${getStatusColor(
                       transaction.status
                     )}`}
                   ></div>

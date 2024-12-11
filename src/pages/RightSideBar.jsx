@@ -29,7 +29,6 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-  useSidebar,
 } from '@components';
 
 import { ActivitiesCard } from './ActivitiesCard';
@@ -111,19 +110,10 @@ const RightSidebar = ({ rightSidebarOpen }) => {
       name: 'Koray Okumus',
     },
   ];
-  const {
-    state,
-    open,
-    setOpen,
-    openMobile,
-    setOpenMobile,
-    isMobile,
-    toggleSidebar,
-  } = useSidebar();
-  console.log('IS MOBILE IN RIGHT SIDEBAR IS ', isMobile);
+
   return (
     <div
-      className={`fixed overflow-scroll right-0 px-5 py-6 top-0 h-full bg-white border-l shadow-lg transition-width duration-300 ${
+      className={`fixed overflow-scroll right-0 px-5 py-6 top-0 h-full bg-white dark:bg-black border-l shadow-lg transition-width duration-300 ${
         rightSidebarOpen ? 'w-[280px]' : 'w-[68px]'
       }`}
     >
@@ -145,7 +135,7 @@ const RightSidebar = ({ rightSidebarOpen }) => {
 
           <a
             href='#notifications'
-            className='flex items-center p-1 font-inter text-sm text-text_primary font-semibold gap-2 rounded hover:bg-gray-100 transition'
+            className='flex items-center p-1 font-inter text-sm text-text_primary dark:text-text_light font-semibold gap-2 rounded hover:bg-gray-100 dark:hover:bg-black transition'
           >
             {rightSidebarOpen && <span>Notifications</span>}
           </a>
@@ -156,6 +146,7 @@ const RightSidebar = ({ rightSidebarOpen }) => {
           >
             {NotificationData?.map((item, index) => (
               <NotificationCard
+                key={index}
                 Svg={item.Svg}
                 title={item.title}
                 time={item.time}
@@ -179,7 +170,7 @@ const RightSidebar = ({ rightSidebarOpen }) => {
 
           <a
             href='#notifications'
-            className='flex items-center p-1 font-inter text-sm text-text_primary font-semibold gap-2 rounded hover:bg-gray-100 transition'
+            className='flex items-center p-1 font-inter text-sm text-text_primary dark:text-text_light font-semibold gap-2 rounded hover:bg-gray-100 dark:hover:bg-black transition'
           >
             {rightSidebarOpen && <span>Activities</span>}
           </a>
@@ -190,6 +181,7 @@ const RightSidebar = ({ rightSidebarOpen }) => {
           >
             {ActivitiesData?.map((item, index) => (
               <ActivitiesCard
+                key={index}
                 image={item.image}
                 title={item.title}
                 time={item.time}
@@ -215,7 +207,7 @@ const RightSidebar = ({ rightSidebarOpen }) => {
 
           <a
             href='#contacts'
-            className='flex items-center p-1 font-inter text-sm text-text_primary font-semibold gap-2 rounded hover:bg-gray-100 transition'
+            className='flex items-center p-1 font-inter text-sm text-text_primary dark:text-text_light font-semibold gap-2 rounded hover:bg-gray-100 dark:hover:bg-black transition'
           >
             {rightSidebarOpen && <span>Contacts</span>}
           </a>
@@ -225,12 +217,12 @@ const RightSidebar = ({ rightSidebarOpen }) => {
             } relative flex-col gap-2`}
           >
             {contactData?.map((item, index) => (
-              <div className='flex p-1 flex-row gap-2 '>
+              <div key={index} className='flex p-1 flex-row gap-2 '>
                 <Avatar className='w-6 h-6'>
                   <AvatarImage src={item.image} />
                   <AvatarFallback>{item.name}</AvatarFallback>
                 </Avatar>
-                <p className='font-inter text-sm font-normal text-text_primary leading-[20px]'>
+                <p className='font-inter text-sm font-normal text-text_primary dark:text-text_light leading-[20px]'>
                   {item.name}
                 </p>
               </div>

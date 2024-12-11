@@ -39,7 +39,7 @@ const BreadcrumbLink = React.forwardRef(
       <Comp
         ref={ref}
         className={cn(
-          'transition-colors hover:text-neutral-950 dark:hover:text-neutral-50',
+          'transition-colors hover:text-neutral-950 dark:text-neutral-50 dark:hover:text-neutral-50',
           className
         )}
         {...props}
@@ -68,10 +68,10 @@ const BreadcrumbSeparator = ({ children, className, ...props }) => (
   <li
     role='presentation'
     aria-hidden='true'
-    className={cn('[&>svg]:w-3.5 [&>svg]:h-3.5', className)}
+    className={cn('[&>svg]:w-3.5 [&>svg]:h-3.5 ', className)}
     {...props}
   >
-    {children ?? <Slash />}
+    {children ?? <Slash className='dark:text-neutral-50' />}
   </li>
 );
 BreadcrumbSeparator.displayName = 'BreadcrumbSeparator';
