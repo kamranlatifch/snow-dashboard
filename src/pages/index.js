@@ -5,3 +5,6 @@ export { LeftSidebarContent } from './LeftSidebarContent';
 export { NotificationCard } from './NotificationCard';
 export { ActivitiesCard } from './ActivitiesCard';
 export { AddUser } from './AddUser';
+export { CalendarFiles } from './CalendarFiles';
+export { LatestFiles } from './LatestFiles';
+export { ProjectSpendings } from './ProjectSpendings';
