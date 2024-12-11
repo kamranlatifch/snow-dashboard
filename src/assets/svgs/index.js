@@ -23,3 +23,8 @@ export { Bug } from './Bug';
 export { NotPerson } from './NotPerson';
 export { NotWifi } from './NotWifi';
 export { ActivitiesBr } from './ActivitiesBr';
+export { Pdf } from './Pdf';
+export { Jpg } from './Jpg';
+export { Zip } from './Zip';
+export { Xls } from './Xls';
+export { Download } from './Download';

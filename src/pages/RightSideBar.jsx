@@ -29,6 +29,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
+  useSidebar,
 } from '@components';
 
 import { ActivitiesCard } from './ActivitiesCard';
@@ -110,16 +111,16 @@ const RightSidebar = ({ rightSidebarOpen }) => {
       name: 'Koray Okumus',
     },
   ];
-  // const {
-  //   state,
-  //   open,
-  //   setOpen,
-  //   openMobile,
-  //   setOpenMobile,
-  //   isMobile,
-  //   toggleSidebar,
-  // } = useSidebar();
-  // console.log('IS MOBILE IN RIGHT SIDEBAR IS ', isMobile);
+  const {
+    state,
+    open,
+    setOpen,
+    openMobile,
+    setOpenMobile,
+    isMobile,
+    toggleSidebar,
+  } = useSidebar();
+  console.log('IS MOBILE IN RIGHT SIDEBAR IS ', isMobile);
   return (
     <div
       className={`fixed overflow-scroll right-0 px-5 py-6 top-0 h-full bg-white border-l shadow-lg transition-width duration-300 ${

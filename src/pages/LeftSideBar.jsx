@@ -171,7 +171,6 @@ const LeftSidebar = ({ setBreadcrumbData }) => {
     isMobile,
     toggleSidebar,
   } = useSidebar();
-  console.log('State in left sidebar is ', state);
   return (
     <Sidebar
       className=' bg-base'

@@ -20,6 +20,9 @@ import {
   Star,
 } from '@assets/svgs';
 import { AddUser } from './AddUser';
+import { CalendarFiles } from './CalendarFiles';
+import { LatestFiles } from './LatestFiles';
+import { ProjectSpendings } from './ProjectSpendings';
 const MainContent = ({
   setSideBar,
   setRightSidebarOpen,
@@ -83,6 +86,11 @@ const MainContent = ({
       </header>
       <div className='flex flex-col gap-7 p-7'>
         <AddUser />
+        <div className='flex flex-row gap-7'>
+          <CalendarFiles />
+          <LatestFiles />
+        </div>
+        <ProjectSpendings />
       </div>
     </main>
   );
